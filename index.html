@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="clockoutApp">
+<head>
+	<title>What time should I clock out?</title>
+	<link rel="stylesheet" href="app.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body>
+	<div ng-controller="ClockCtrl">
+	<h1>Clock out time</h1>
+		<p>Time clocked in: <input type="text" ng-model="data.time"></p>
+		<p>Hours so far: <input type="text" ng-model="data.hours"></p>
+		<button ng-click="calculate(data.time, data.hours)">Calculate</button>
+
+		<p>You should clock out at: {{ display() }}</p>
+	</div>
+</body>
+</html>
